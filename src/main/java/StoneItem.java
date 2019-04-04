@@ -11,25 +11,29 @@ public class StoneItem {
             return values()[random.nextInt(values().length)];
         }
     }
-    enum StoneClatity{
+    enum StoneClarity{
         I, IF, SI, VS, VVS;
 
-        public static StoneClatity getStoneClatityRandom() {
+        public static StoneClarity getStoneClatityRandom() {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
         }
     }
 
+    private StoneClarity stoneClarity;
     private StoneType stoneType;
     private String stoneName;
     private int mass;
-    private int clarity;
     private int price;
 
-    public StoneItem(String name, int mass, int transparency, int price) {
+    public StoneItem() {
+    }
+
+    public StoneItem(String name, int mass, StoneType type, StoneClarity clatity, int price) {
         stoneName = name;
         this.mass = mass;
-        this.clarity = transparency;
+        this.stoneType = type;
+        this.stoneClarity = clatity;
         this.price = price;
     }
 
@@ -65,11 +69,11 @@ public class StoneItem {
         this.mass = mass;
     }
 
-    public int getClarity() {
-        return clarity;
+    public StoneClarity getClarity() {
+        return stoneClarity;
     }
 
-    public void setClarity(int clarity) {
-        this.clarity = clarity;
+    public void setClarity(StoneClarity clarity) {
+        this.stoneClarity = clarity;
     }
 }
