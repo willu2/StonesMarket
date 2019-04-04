@@ -1,10 +1,11 @@
 import java.util.Random;
 
-public class StoneItem {
+public class StoneItem implements Comparable<StoneItem> {
 
     enum StoneType{
         PRECIOS,
         HALFPRECIOUS;
+
         //public void setStoneType(StoneType type){stoneType = type;        }
         public static StoneType getRandomType() {
             Random random = new Random();
@@ -13,18 +14,17 @@ public class StoneItem {
     }
     enum StoneClarity{
         I, IF, SI, VS, VVS;
-
         public static StoneClarity getStoneClatityRandom() {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
         }
-    }
 
+    }
     private StoneClarity stoneClarity;
     private StoneType stoneType;
     private String stoneName;
     private int mass;
-    private int price;
+    private Integer price;
 
     public StoneItem() {
     }
@@ -53,7 +53,7 @@ public class StoneItem {
         this.stoneType = stoneType;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
@@ -76,4 +76,22 @@ public class StoneItem {
     public void setClarity(StoneClarity clarity) {
         this.stoneClarity = clarity;
     }
+
+
+    @Override
+    public String toString() {
+        return "Employee [price=" + price + "]";
+    }
+
+    @Override
+    public int compareTo(StoneItem o) {
+        return this.getPrice().compareTo(o.getPrice());
+    }
+    /*@Override
+    public int compareTo(StoneItem o) {
+        if(getPrice() > o.getPrice())
+            return getPrice();
+        else
+            return o.getPrice();
+    }*/
 }
