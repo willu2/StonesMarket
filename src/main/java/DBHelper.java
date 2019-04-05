@@ -11,7 +11,6 @@ public class DBHelper {
 
     public DBHelper() {
         marketCreator = new MarketCreator();
-       // stouncDB = new ArrayList<>();
         stouncDB = marketCreator.getStouncDB();
     }
 
