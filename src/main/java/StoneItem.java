@@ -80,18 +80,12 @@ public class StoneItem implements Comparable<StoneItem> {
 
     @Override
     public String toString() {
-        return "Employee [price=" + price + "]";
+        return "Stone [price=" + price + "]";
     }
 
     @Override
     public int compareTo(StoneItem o) {
         return this.getPrice().compareTo(o.getPrice());
     }
-    /*@Override
-    public int compareTo(StoneItem o) {
-        if(getPrice() > o.getPrice())
-            return getPrice();
-        else
-            return o.getPrice();
-    }*/
+
 }
