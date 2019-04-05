@@ -9,10 +9,6 @@ public class StonesMarket {
         MenuBuild menu = new MenuBuild();
         DBHelper dbHelper = new DBHelper();
 
-        //dbHelper.showAllData();
-        //dbHelper.sortReverseItemList();
-       // dbHelper.findByClarity(StoneItem.StoneClarity.SI);
-
         boolean exit = false;
 
         do {
@@ -34,15 +30,17 @@ public class StonesMarket {
                         dbHelper.findByClarity(pos);
                         break;
                     case 3:
-                        price = Integer.parseInt(in.readLine());
-                        //toysGenerator.findBySize(pos, price);
-                        dbHelper.findByClarity(price);
+                        price = menu.menuTotalPriceEnter();
+                        dbHelper.findByPriceBucket(price);
                         break;
                     case 4:
-                        menu.clarityShow();
+                        menu.typeShow();
                         pos = Integer.parseInt(in.readLine());
-                        menu.priceEnter();
-
+                        dbHelper.findByType(pos);
+                        break;
+                    case 5:
+                        menu.sortShow();
+                        dbHelper.sortItemList();
                         break;
                     case 8:
                         exit = true;

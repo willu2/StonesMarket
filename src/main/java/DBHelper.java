@@ -42,8 +42,17 @@ public class DBHelper {
         }
     }
 
-    public void findByPriceBucket(int clnum){
+    public void findByType(int clnum){
+        StoneItem.StoneType cl = typeChecker(clnum);
+        for (Iterator<StoneItem> it = stouncDB.iterator(); it.hasNext(); ) {
+            StoneItem stoneItem = it.next();
+                if(cl == stoneItem.getStoneType()){
+                    printItemList(stoneItem);
+                }
+        }
+    }
 
+    public void findByPriceBucket(int clnum){
         for (Iterator<StoneItem> it = stouncDB.iterator(); it.hasNext(); ) {
             StoneItem stoneItem = it.next();
                 if(clnum >= stoneItem.getPrice()){
@@ -92,6 +101,25 @@ public class DBHelper {
                     System.out.println("Try again...");
             }
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cl;
+    }
+
+    public  StoneItem.StoneType typeChecker(int pos){
+        StoneItem.StoneType cl = StoneItem.StoneType.PRECIOS;
+        try {
+            switch (pos) {
+                case 1:
+                    cl = StoneItem.StoneType.PRECIOS;
+                    break;
+                case 2:
+                    cl = StoneItem.StoneType.HALFPRECIOUS;
+                    break;
+                default:
+                    System.out.println("Try again...");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

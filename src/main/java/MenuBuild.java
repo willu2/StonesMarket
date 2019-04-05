@@ -9,9 +9,8 @@ public class MenuBuild {
         System.out.println(" 1 :> Show all stotes ");
         System.out.println(" 2 :> Show by clarity  >>> ");
         System.out.println(" 3 :> Show by price >>> ");
-        System.out.println(" 4 :> Show ierarhy >>> ");
-        System.out.println(" 5 :> Find toys by price and size >>> ");
-        System.out.println(" 6 :> Find toys by price and size >>> ");
+        System.out.println(" 4 :> Show hierarchy >>> ");
+        System.out.println(" 5 :> Sort by price >>> ");
         System.out.println(" 8 :> Exit ");
 
         System.out.println("Enter position :> ");
@@ -26,8 +25,18 @@ public class MenuBuild {
         System.out.println(" 5 :> VVS ");
     }
 
+    public void typeShow(){
+        System.out.println("Enter value: ");
+        System.out.print(" 1 :> PRECIOS |*|");
+        System.out.println(" 2 :> HALFPRECIOUS |*|");
+    }
+
     public void priceEnter(){
-        System.out.println("Enter money count:");
+        System.out.println("Enter your money count:");
+    }
+
+    public void sortShow(){
+        System.out.println("Sort by price:");
     }
 
     public int menuTotalPriceEnter(){
@@ -35,7 +44,7 @@ public class MenuBuild {
 
         try {
             while (visitorPrice <= 0 ){
-                System.out.println("How much money do you have (int number) ? : ");
+                System.out.println("Enter your money count (int number) ? : ");
                 try {
                     BufferedReader inPrice = new BufferedReader(new InputStreamReader(System.in));
                     visitorPrice = Integer.parseInt(inPrice.readLine());
