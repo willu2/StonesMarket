@@ -1,3 +1,5 @@
+package stone.duf.com;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,7 +22,7 @@ public class StonesMarket {
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
             try {
-                switch (pos = Integer.parseInt(in.readLine())) {
+                switch (Integer.parseInt(in.readLine())) {
                     case 1:
                         dbHelper.showAllData();
                         break;

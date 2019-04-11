@@ -1,3 +1,5 @@
+package stone.duf.com;
+
 import java.util.Random;
 
 public class StoneItem implements Comparable<StoneItem> {
@@ -6,7 +8,6 @@ public class StoneItem implements Comparable<StoneItem> {
         PRECIOS,
         HALFPRECIOUS;
 
-        //public void setStoneType(StoneType type){stoneType = type;        }
         public static StoneType getRandomType() {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
@@ -41,40 +42,20 @@ public class StoneItem implements Comparable<StoneItem> {
         return stoneName;
     }
 
-    public void setStoneName(String stoneName) {
-        this.stoneName = stoneName;
-    }
-
     public StoneType getStoneType() {
         return stoneType;
-    }
-
-    public void setStoneType(StoneType stoneType) {
-        this.stoneType = stoneType;
     }
 
     public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public int getMass() {
         return mass;
     }
 
-    public void setMass(int mass) {
-        this.mass = mass;
-    }
-
     public StoneClarity getClarity() {
         return stoneClarity;
-    }
-
-    public void setClarity(StoneClarity clarity) {
-        this.stoneClarity = clarity;
     }
 
 

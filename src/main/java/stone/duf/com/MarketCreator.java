@@ -1,3 +1,5 @@
+package stone.duf.com;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,8 +13,8 @@ public class MarketCreator {
         return stouncDB;
     }
 
-    List<StoneItem> stouncDB = new ArrayList<>();
-    StoneItem stoneItem;
+    private List<StoneItem> stouncDB = new ArrayList<>();
+    private StoneItem stoneItem;
 
     private int tempPrice = 0;
 
@@ -50,7 +52,7 @@ public class MarketCreator {
        return stoneItem = new StoneItem(stoneName, mass, stoneType, clarity, price);
     }
 
-    public void pushdataToDB(){
+    private void pushdataToDB(){
         for (int i = 0; i < 50; i++ ){
             stouncDB.add(createItemPositin());
         }

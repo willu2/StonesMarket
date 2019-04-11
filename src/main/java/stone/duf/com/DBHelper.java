@@ -1,3 +1,5 @@
+package stone.duf.com;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -15,11 +17,6 @@ public class DBHelper {
 
     public void sortItemList(){
         Collections.sort(stouncDB);
-        iterationPrint(stouncDB);
-    }
-
-    public void sortReverseItemList(){
-        Collections.sort(stouncDB, Collections.reverseOrder());
         iterationPrint(stouncDB);
     }
 
@@ -69,13 +66,14 @@ public class DBHelper {
         System.out.println();
     }
 
-    public void iterationPrint(List<StoneItem> stouncDB){
+    private void iterationPrint(List<StoneItem> stouncDB){
         for (Iterator<StoneItem> it = stouncDB.iterator(); it.hasNext(); ) {
             StoneItem stoneItem = it.next();
             printItemList(stoneItem);
         }
     }
 
+    //check stone clarity
     public  StoneItem.StoneClarity clarityChecker(int pos){
         StoneItem.StoneClarity cl = StoneItem.StoneClarity.I;
         try {
@@ -105,6 +103,7 @@ public class DBHelper {
         return cl;
     }
 
+    //check stone type
     public  StoneItem.StoneType typeChecker(int pos){
         StoneItem.StoneType cl = StoneItem.StoneType.PRECIOS;
         try {

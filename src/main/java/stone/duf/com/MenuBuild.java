@@ -1,3 +1,5 @@
+package stone.duf.com;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,10 +31,6 @@ public class MenuBuild {
         System.out.println("Enter value: ");
         System.out.print(" 1 :> PRECIOS |*|");
         System.out.println(" 2 :> HALFPRECIOUS |*|");
-    }
-
-    public void priceEnter(){
-        System.out.println("Enter your money count:");
     }
 
     public void sortShow(){
